@@ -25,7 +25,7 @@ public class Main {
         while (true) {
             System.out.println("Введите скорость машины №" + carNumber + ":"); //запрос скорости автомобиля
 
-            if (scanner.hasNextInt() ) { // проверка введённой скорости на тип int
+            if (scanner.hasNextInt()) { // проверка введённой скорости на тип int
 
                 speed = scanner.nextInt();
 
@@ -36,7 +36,7 @@ public class Main {
                 }
             } else {
                 System.out.println("Введённая скорость не является целым числом");
-                scanner.next();
+                scanner.nextLine();
             }
         }
 
