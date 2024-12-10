@@ -12,10 +12,6 @@ public class Main {
         System.out.println("Самая быстрая машина: " + race.winnerName); // вывод имени победителя
     }
 
-    public static boolean speedCheck(int speed) { //функция проверки скорости автомобиля
-        return speed > 0 && speed <= 250;
-    }
-
     public static Car carMaker(int carNumber) {
         Scanner scanner = new Scanner(System.in); //активация класса Scanner
 
@@ -28,12 +24,19 @@ public class Main {
 
         while (true) {
             System.out.println("Введите скорость машины №" + carNumber + ":"); //запрос скорости автомобиля
-            speed = scanner.nextInt();
 
-            if (speedCheck(speed)) { //проверка допустимого диапазона скоростей
-                break;
+            if (scanner.hasNextInt() ) { // проверка введённой скорости на тип int
+
+                speed = scanner.nextInt();
+
+                if (speed > 0 && speed <= 250) { // проверка введённой скорости в допустимом диапазоне от 0 до 250
+                    break;
+                } else {
+                    System.out.println("Введённая скорость должна быть больше 0, но меньше 250");
+                }
             } else {
-                System.out.println("Неправильная скорость");
+                System.out.println("Введённая скорость не является целым числом");
+                scanner.next();
             }
         }
 
