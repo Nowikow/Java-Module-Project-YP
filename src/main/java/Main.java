@@ -18,9 +18,16 @@ public class Main {
         int speed = 0; // будущая скорость автомобиля
         String name = ""; // будущее имя автомобиля
 
-        System.out.println("Введите название машины №" + carNumber + ":"); //запрос названия автомобиля
-        name = scanner.nextLine();
+        while (true) {
+            System.out.println("Введите название машины №" + carNumber + ":"); //запрос названия автомобиля
+            name = scanner.nextLine();
 
+            if (name == "") { //проверка имени на пустую строку
+                System.out.println("Название автомобиля не должно быть пустой строкой");
+            } else {
+                break;
+            }
+        }
 
         while (true) {
             System.out.println("Введите скорость машины №" + carNumber + ":"); //запрос скорости автомобиля
